@@ -1,0 +1,29 @@
+header{
+
+  background-color: rgba(241, 174, 80, 0.641);
+  height: 6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+}
+.brand{
+  font-size: 19pt;
+  color: rgb(146, 67, 7);
+  margin-left: 3%;
+}
+
+bookPage/node_modules.linkHeader{
+  margin-right: 17px;
+  display: flex;
+  gap: 10%;
+}
+
+header a{
+  color: rgb(146, 67, 7);
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 15pt;
+}
+

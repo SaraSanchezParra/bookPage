@@ -1,0 +1,24 @@
+footer{
+  border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.585);
+  height: 6vh;
+  display: flex;
+  justify-content: center;
+
+}
+
+bookPage/node_modules.linkFooter{
+  margin-right: 17px;
+  display: flex;
+  gap: 10%;
+  align-items: center;
+}
+
+footer a{
+  color: white;
+  text-decoration: none;
+  margin-right: 7px;
+  font-size: 15pt;
+}
+
+
