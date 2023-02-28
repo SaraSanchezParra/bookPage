@@ -1,0 +1,151 @@
+.backgroundPage{
+  background-image: url("https://img.freepik.com/foto-gratis/composicion-vista-frontal-diferentes-libros_23-2148851048.jpg?w=1800&t=st=1677506263~exp=1677506863~hmac=39d20c7a1d4b58168cd20b5d4232a9b406ca467045c009ec54957c39d0331ea3");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  position: relative;
+  width: 25%;
+  height: 500px;
+  background: #e7a33d73;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: all .25s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 4px 50px #00000020;
+}
+
+.container:hover .card {
+  transform: translateY(-5%);
+}
+
+.info {
+  margin-top: 1rem;
+  margin-bottom: 3%;
+}
+
+.info h2, p {
+  color: #fff;
+  text-align: center;
+}
+
+.card {
+  transition: all .25s ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.card input {
+  display: none;
+}
+
+.card main {
+  position: relative;
+}
+
+.card main a svg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid rgb(110, 66, 13);
+}
+
+.card main a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-image: linear-gradient(to right, rgba(249, 190, 127, 0.747) 20%, rgba(224, 168, 126, 0.673));
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.card main a:hover::after {
+  opacity: 1;
+}
+
+.card main a::after {
+  content: "Change";
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  left: 0px;
+  bottom: 0px;
+  background-image: linear-gradient(transparent 0%, rgba(226, 166, 47, 0.584) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: all 0.2s ease-in-out 0s;
+  padding-bottom: 1rem;
+}
+.containerForm{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-content: space-between;
+}
+
+.containerForm{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3%;
+  padding: 8%;
+}
+.formUser{
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4%;
+  gap: 5%;
+
+}
+
+.formUser2{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4%;
+  gap: 5%;
+}
+ form input{
+  border: none;
+  display: flex;
+  height: 13%;
+  border-radius: 10px;
+  justify-content: space-between;
+  width: 80%;
+  padding: 4%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  opacity: 85%;
+
+
+ }
+
+ label{
+  color: rgb(100, 71, 32);
+  margin: 3%;
+  padding-bottom: 3%;
+  font-weight: bold;
+ }
+
+ button{
+  margin-top: 5%;
+  width: 40%;
+  height: 10%;
+  background-color: rgb(233, 166, 20);
+  border: none;
+  color: white;
+ }
+
