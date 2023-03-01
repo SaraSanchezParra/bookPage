@@ -1,0 +1,50 @@
+<div class="backgroundPage">
+  <div class="multipleCards">
+    <div class="showBooks">
+      <ng-container *ngIf="books.length === 0; else showBooks">
+        <p class="ngIf"> No books available.</p>
+      </ng-container>
+    </div>
+    <ng-template #showBooks>
+      <div class="card" *ngFor="let book of books; let par = even">
+        <img class="card-img" src="{{book.photo}}">
+        <div class="card-info">
+          <p class="type">{{book.type}}</p>
+          <p class="text-title">{{book.title}}</p>
+          <p class="text-body">{{book.author}}</p>
+          <p class="reference">{{book.id_book | reference}}</p>
+        </div>
+        <div class="card-footer">
+          <span class="text-title">{{book.price}}€</span>
+          <button type="button" class="card-button" [ngClass]="par ? 'blue' : 'yellow' ">Add</button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <div class="form-style-10">
+    <h1>Add your books<span>Write down your books to add them to the library</span></h1>
+    <form>
+        <div class="section"></div>
+        <div class="inner-wrap">
+            <label>Title <input type="text" #input1></label>
+            <label>Type of cover  <input type="text" #input2></label>
+        </div>
+
+        <div class="section"></div>
+        <div class="inner-wrap">
+            <label>Author <input type="text" #input3></label>
+            <label>Price <input type="text" #input4></label>
+        </div>
+
+
+            <div class="inner-wrap">
+            <label>Photo <input type="text" #input5></label>
+            <label>Id user <input type="text" #input6></label>
+            <label>Id book <input type="text" #input7></label>
+        </div>
+        <div class="button-section">
+        <button type="button" on-click="send(input1.value, input2.value, input3.value, input4.value, input5.value, input7.value)">Send</button>
+        </div>
+    </form>
+    </div>
+</div>
