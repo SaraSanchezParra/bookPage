@@ -1,0 +1,112 @@
+/* .backgroundPage{
+  background-image: url("https://img.freepik.com/foto-gratis/composicion-vista-frontal-diferentes-libros_23-2148851048.jpg?w=1800&t=st=1677506263~exp=1677506863~hmac=39d20c7a1d4b58168cd20b5d4232a9b406ca467045c009ec54957c39d0331ea3");
+  height: 200vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+/* .multipleCards{
+  color: rgb(92, 63, 9);
+  width: 100%;
+  height: 100vh;
+  border: 3px solid red;
+} */
+
+.showCards1{
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.card {
+  width: 350px;
+  height: 600px;
+  padding: .8em;
+  background: #d8ad38a3;
+  /* position: relative; */
+  overflow: visible;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+ }
+ .buttonX{
+  width: 10%;
+  margin-bottom: 20px;
+  border-radius: 40%;
+  background: rgb(195,34,68);
+  background: linear-gradient(0deg, rgba(195,34,68,1) 0%, rgba(253,187,45,1) 100%);
+  margin-left: 300px;
+
+ }
+
+ .card-img {
+  background-color: #ffcaa635;
+  height: 63%;
+  width: 100%;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+
+ .card-info {
+  padding-top: 10%;
+ }
+
+ svg {
+  width: 20px;
+  height: 20px;
+ }
+
+ .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+ }
+
+ /*Text*/
+ .text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+ }
+
+ .text-body {
+  font-size: .9em;
+  padding-bottom: 10px;
+ }
+
+ /*Button*/
+ .card-button {
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
+ }
+
+ /*Hover*/
+ .card-img:hover {
+  transform: translateY(-25%);
+  box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+ }
+
+ .card-button:hover {
+  border: 1px solid #ffcaa6;
+  background-color: #ffcaa6;
+ }
+
+.blue{
+  background-color: rgb(67, 135, 166);
+  color:white;
+}
+.yellow{
+  background-color: rgb(173, 155, 40);
+  color: white;
+}

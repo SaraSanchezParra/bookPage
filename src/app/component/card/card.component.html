@@ -1,0 +1,18 @@
+
+<div class="card">
+    <div class="showCards1">
+      <button class="buttonX" type="button" (click)="eliminarCard()">x</button>
+      <img class="card-img" src="{{cardBook.photo}}">
+      <div class="card-info">
+        <p class="type">{{cardBook.type}}</p>
+        <p class="text-title">{{cardBook.title}}</p>
+        <p class="text-body">{{cardBook.author}}</p>
+        <p class="reference">{{cardBook.id_book | reference}}</p>
+      </div>
+      <div class="card-footer">
+        <span class="text-title">{{cardBook.price}}€</span>
+        <button class="card-button" [ngClass] = "par ? 'blue' : 'yellow' ">Add</button>
+      </div>
+    </div>
+  </div>
+

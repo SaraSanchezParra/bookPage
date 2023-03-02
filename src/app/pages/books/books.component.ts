@@ -23,4 +23,10 @@ export class BooksComponent {
     let newBook = new Book(title, type, author, price, photo, id_book)
     this.books.push(newBook)
   }
+  recogerCard(cardBook:Book){
+    this.books = this.books.filter(bookFiltered => bookFiltered.id_book != cardBook.id_book)
+    console.log(this.books);
+
+
+}
 }
