@@ -1,5 +1,11 @@
 <div class="backgroundPage">
   <div class="multipleCards">
+    <div id='search-box'>
+      <form action='/search' id='search-form'>
+      <input #searchBar id='search-text' name='q' placeholder='What are you looking for?' type='text'/>
+      <button id='search-button' type='button'(click)= "searchBook(searchBar.value)"><span>Search</span></button>
+      </form>
+      </div>
     <div class="showBooks">
       <ng-container *ngIf="books.length === 0; else showBooks">
         <p class="ngIf"> No books available.</p>
@@ -11,7 +17,7 @@
       </ng-container>
     </ng-template>
   </div>
-  <div class="formContainer">
+  <!-- <div class="formContainer">
     <div class="form-style-10">
       <h1>Add your books<span>Write down your books to add them to the library</span></h1>
       <form>
@@ -39,5 +45,5 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
 </div>

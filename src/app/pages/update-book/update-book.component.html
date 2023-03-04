@@ -1,0 +1,29 @@
+<div class="formContainer">
+  <div class="form-style-10">
+    <h1>Modify your books<span>Write down your books to modify them in the library</span></h1>
+    <form>
+      <div class="section"></div>
+      <div class="inner-wrap">
+        <label>Title <input type="text" #input1></label>
+        <label>Type of cover <input type="text" #input2></label>
+      </div>
+
+      <div class="section"></div>
+      <div class="inner-wrap">
+        <label>Author <input type="text" #input3></label>
+        <label>Price <input type="text" #input4></label>
+      </div>
+
+
+      <div class="inner-wrap">
+        <label>Photo <input type="text" #input5></label>
+        <label>Id user <input type="text" #input6></label>
+        <label>Id book <input type="text" #input7></label>
+      </div>
+      <div class="button-section">
+        <button type="button"
+          on-click="send(input1.value, input2.value, input3.value, input4.value, input5.value, input7.value)">Send</button>
+      </div>
+    </form>
+  </div>
+</div>

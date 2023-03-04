@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Book } from 'src/app/models/book';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-books',
@@ -7,15 +8,12 @@ import { Book } from 'src/app/models/book';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
+
   public books: Book [];
 
-  constructor(){
+  constructor(public BooksService:BooksService){
 
-    let book1:Book = new Book ( "El señor de los anillos", "Tapa dura", " J.R.R. Tolkien", 29, "https://upload.wikimedia.org/wikipedia/commons/7/7d/El_Se%C3%B1or_de_los_Anillos_lectura.jpg", 33, 24);
-    let book2:Book = new Book ( "Los renglones torcidos de Dios", "Tapa blanda", "Torcuato Luca de Tena", 15, "https://m.media-amazon.com/images/I/513FJOfUW2L._SX324_BO1,204,203,200_.jpg", 34, 28);
-    let book3:Book = new Book ( "La revuelta de las putas", "Tapa dura", " Amelia Tiganus", 19, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ81PzbsMEcCQTwsx1KAoNOiIFNsBsD3BXt0Q&usqp=CAU", 35, 232);
-    this.books = [book1, book2, book3]
-    // this.books = []
+   this.books = this.BooksService.getAll()
 
   }
 
@@ -23,10 +21,24 @@ export class BooksComponent {
     let newBook = new Book(title, type, author, price, photo, id_book)
     this.books.push(newBook)
   }
-  recogerCard(cardBook:Book){
+  public recogerCard(cardBook:Book){
     this.books = this.books.filter(bookFiltered => bookFiltered.id_book != cardBook.id_book)
     console.log(this.books);
 
+  }
+  searchBook(id_book:string) {
+    console.log("idlibro" + id_book); //para ver qué llega cuando en el campo de Search no he metido nada
+    if (id_book == ""){ //si yo meto algo vacío en el buscador, me devolverá todos los libros
+      this.books = this.BooksService.getAll();
+    }
+    else {
+    let number:number = Number(id_book)//convierto en número esa referencia
+    let searchedBook = this.BooksService.getOne(number)//que ejecute el método getOne.
+    if (searchedBook != undefined){ //si busco un libro que no existe, me devolverá a undefined. Es decir, si existe, me devuelve el libro, si no existe, no toca nada.
+    this.books = [searchedBook];
+    console.log(searchedBook)}
+    }
 
+  }
 }
-}
+//si existe un libro con el id que le he pasado, bórrame el array entero y créame un array(datos) en la vista (una tarjeta) con el libro que estoy buscando.
