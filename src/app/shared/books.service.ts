@@ -42,7 +42,7 @@ export class BooksService {
   public delete(id_book:number):boolean{ //me llega un id en el formulario
       for (let i=0; i<this.books.length; i++){
         if (this.books[i].id_book == id_book) {
-          this.books.splice(i, 1);  //a partir de la i, bórrame un elemento. Podríamos poner 3 elementos, pero si eliminamos solo 1 elemento, solo borrará uno.
+          this.books.splice(i, 1);  //a partir de la i, bórrame un elemento.
         }
       }
       return true //devuelve un booleano como parámetro de salida para decirme si se ha podido modificar o no el libro.
