@@ -14,6 +14,10 @@ import { ReferencePipe } from './pipes/reference.pipe';
 import { CardComponent } from './component/card/card.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { LoginComponent } from './component/login/login.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -30,10 +34,14 @@ import { UpdateBookComponent } from './pages/update-book/update-book.component';
     CardComponent,
     AddBookComponent,
     UpdateBookComponent,
+    LoginComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

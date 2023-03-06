@@ -18,34 +18,27 @@ export class BooksService {
     return this.books
   }
   public getOne(id_libro:number):Book{
-    let bookPosition = -1; //no existe// no lo pongo en 0 poruq ei no estaría dici9endo que la posición del libro es el primer índice
-    for (let i=0; i<this.books.length; i++){
-      if (this.books[i].id_book == id_libro){
-        bookPosition = i
-      }
+    let bookFound = this.books.find(book => book.id_book == id_libro)
+      return bookFound
     }
-    return this.books[bookPosition] //comparo libro a libro, si coincide el id, guardo la variable en book position la posicion de i
 
-  }
   public add(book:Book):void{
     this.books.push(book);  //estoy añadiendo al array que tiene los slibros en la línea 14
 
   }
-  public edit(book:Book):boolean{ //me llega un book formulario
-      for (let i=0; i<this.books.length; i++){
-        if (this.books[i].id_book == book.id_book) { //si el id del book que estamos recorriendo es igual al que se pasa por parámetro (en la card)
-          this.books[i] = book //lo buscamos y cuando enocntramos su posición, lo sobreescribimos ocn lso datos del nuevo
-        }
-      }
-      return true;
-  }
-  public delete(id_book:number):boolean{ //me llega un id en el formulario
-      for (let i=0; i<this.books.length; i++){
-        if (this.books[i].id_book == id_book) {
-          this.books.splice(i, 1);  //a partir de la i, bórrame un elemento.
-        }
-      }
-      return true //devuelve un booleano como parámetro de salida para decirme si se ha podido modificar o no el libro.
-  }
+  public edit(bookEdited:Book):boolean{ //me llega un book formulario
+   console.log(bookEdited.id_book)
+   console.log(this.books)
+    let editBook = this.books.findIndex(book => book.id_book === bookEdited.id_book)
+    // this.books[editBook] = bookEdited //ouedes hacerlo de esta manera o
+    this.books.splice(editBook, 1, bookEdited)
+    return editBook != -1;
+}
+
+public delete(id_book:number):boolean{ //me llega un id en el formulario
+  let deletedBook = this.books.findIndex(book => book.id_book == id_book)
+      this.books.splice(deletedBook, 1);  //a partir de la i, bórrame un elemento.
+  return deletedBook != -1 //devuelve un booleano como parámetro de salida para decirme si se ha podido modificar o no el libro.
+}
 
 }

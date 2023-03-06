@@ -17,8 +17,13 @@ export class UpdateBookComponent {
   }
 
   public send (title:string, type:string, author: string, price: number, photo:string, id_book:number){
-    let newBook = new Book(title, type, author, price, photo, id_book);
-    this.BooksService.edit (newBook)
+    let newBook = new Book(title, type, author, price, photo, Number(id_book));
+    if (this.BooksService.edit (newBook)){
+      alert("The reference book" + " " + newBook.id_book + "has been modified")
+    }
+    else{
+      alert("This reference book has not been found" + " " + newBook.id_book)
+    }
   }
 //   public recogerCard(cardBook:Book){
 //     this.books = this.books.filter(bookFiltered => bookFiltered.id_book != cardBook.id_book)

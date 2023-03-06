@@ -13,7 +13,7 @@ export class BooksComponent {
 
   constructor(public BooksService:BooksService){
 
-   this.books = this.BooksService.getAll()
+  this.books = this.BooksService.getAll()
 
   }
 
@@ -22,7 +22,7 @@ export class BooksComponent {
     this.books.push(newBook)
   }
   public recogerCard(cardBook:Book){
-    this.books = this.books.filter(bookFiltered => bookFiltered.id_book != cardBook.id_book)
+    this.BooksService.delete(cardBook.id_book)//tengo que llamar a cardbook porque es donde está el id_book
     console.log(this.books);
 
   }
@@ -37,6 +37,7 @@ export class BooksComponent {
     if (searchedBook != undefined){ //si busco un libro que no existe, me devolverá a undefined. Es decir, si existe, me devuelve el libro, si no existe, no toca nada.
     this.books = [searchedBook];
     console.log(searchedBook)}
+    else{  alert("This book doesn´t exist")}
     }
 
   }
