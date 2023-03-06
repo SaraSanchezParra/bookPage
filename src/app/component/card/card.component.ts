@@ -17,8 +17,8 @@ export class CardComponent {
 
   }
   eliminarCard() { //elimina mi card
-    this.BooksService.delete(this.cardBook.id_book)//tengo que llamar a cardbook porque es donde está el id_book
-    // this.deletedCard.emit(this.cardBook)
+
+    this.deletedCard.emit(this.cardBook)
     // console.log(this.cardBook);
 
   }

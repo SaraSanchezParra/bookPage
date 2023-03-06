@@ -1,13 +1,22 @@
-<form class="row g-7">
+<form class="row g-7" #userForm ="ngForm" (ngSubmit)="onSubmit(userForm)">
   <div class="col-auto">
     <label for="staticEmail2" class="visually-hidden">Email</label>
-    <input type="text" class="form-control" id="staticEmail2" value="email@example.com">
+    <input type="email" name="email" class="form-control" id="staticEmail2" value="email@example.com"[(ngModel)] ="user.email" #emailId ="ngModel" [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
+    <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="invalid-feedback">
+      <div *ngIf="emailId.errors.required">Email is required</div>
+      <div *ngIf="emailId.errors.email">The email is incorrect</div>
+    </div>
   </div>
   <div class="col-auto">
     <label for="inputPassword2" class="visually-hidden">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
+    [ngClass]="{'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
+    <div *ngIf="(passwordId.dirty || passwordId.touched) && passwordId.invalid" class="invalid-feedback">
+      <div *ngIf="passwordId.errors.required">Password is required</div>
+      <div *ngIf="passwordId.errors.minlength">Password min 8 characteres</div>
+    </div>
   </div>
   <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+    <button type="submit" class="btn btn-primary mb-3" [disabled]="userForm.invalid">Confirm identity</button>
   </div>
 </form>
