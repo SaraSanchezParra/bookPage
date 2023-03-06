@@ -30,12 +30,14 @@ export class BooksComponent {
     console.log("idlibro" + id_book); //para ver qué llega cuando en el campo de Search no he metido nada
     if (id_book == ""){ //si yo meto algo vacío en el buscador, me devolverá todos los libros
       this.books = this.BooksService.getAll();
+      alert("This book doesn´t exist")
     }
     else {
     let number:number = Number(id_book)//convierto en número esa referencia
     let searchedBook = this.BooksService.getOne(number)//que ejecute el método getOne.
-    if (searchedBook != undefined){ //si busco un libro que no existe, me devolverá a undefined. Es decir, si existe, me devuelve el libro, si no existe, no toca nada.
+    if (searchedBook != undefined){//si busco un libro que no existe, enséñamelo. Es decir, si existe, me devuelve el libro, si no existe, no toca nada.
     this.books = [searchedBook];
+    alert("This book doesn´t exist")
     console.log(searchedBook)}
     }
 

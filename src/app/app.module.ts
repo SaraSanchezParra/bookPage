@@ -14,6 +14,8 @@ import { ReferencePipe } from './pipes/reference.pipe';
 import { CardComponent } from './component/card/card.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './component/form-register/component/form-login/form-login.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { UpdateBookComponent } from './pages/update-book/update-book.component';
     CardComponent,
     AddBookComponent,
     UpdateBookComponent,
+    LoginComponent,
+    FormLoginComponent,
   ],
   imports: [
     BrowserModule,
