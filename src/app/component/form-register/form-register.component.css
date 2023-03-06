@@ -1,6 +1,6 @@
 .backgroundForm{
-  background-image: url("https://img.freepik.com/foto-gratis/composicion-vista-frontal-diferentes-libros_23-2148851048.jpg?w=1800&t=st=1677506263~exp=1677506863~hmac=39d20c7a1d4b58168cd20b5d4232a9b406ca467045c009ec54957c39d0331ea3");
-  height: 100vh;
+  background: rgba(227, 191, 85, 0.729);
+  height: 200vh;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 100px;

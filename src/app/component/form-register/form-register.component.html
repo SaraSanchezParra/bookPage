@@ -1,6 +1,6 @@
 
-<div class="backgroundForm">
-  <div class="form-style-10">
+
+  <!-- <div class="form-style-10">
   <h1>Sign Up Now!<span>Sign up and tell us what you think of the site!</span></h1>
   <form>
       <div class="section"></div>
@@ -25,4 +25,114 @@
       </div>
   </form>
   </div>
+</div> -->
+
+<div class="backgroundForm">
+  <section class="vh-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-10 col-xl-">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                  <form class="mx-1 mx-md-4" [formGroup]="myForm">
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="name"
+                          [ngClass]="{'is-invalid': (myForm.get('name').dirty || myForm.get('name').touched) && !myForm.get('name').valid}" />
+                        <div *ngIf="!myForm.get('name').valid" class="invalid-feedback">
+                          Your name is required
+                        </div>
+                        <label class="form-label" for="form3Example1c">Your Name</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="lastName"
+                        [ngClass]="{'is-invalid': (myForm.get('lastName').dirty || myForm.get('lastName').touched) && !myForm.get('lastName').valid}"/>
+                        <div *ngIf="!myForm.get('lastName').valid" class="invalid-feedback">
+                          Your surname is required
+                        </div>
+                        <label class="form-label" for="form3Example1c">Your Surname</label>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="photo" />
+                        <label class="form-label" for="form3Example1c">Your Photo</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c" class="form-control" formControlName="email"
+                          [ngClass]="{'is-invalid': (myForm.get('email').dirty || myForm.get('email').touched) && !myForm.get('email').valid}" />
+                        <div *ngIf="!myForm.get('email').valid" class="invalid-feedback">
+                          <div *ngIf="myForm.get('email').errors.required">Email is required</div>
+                          <div *ngIf="myForm.get('email').errors.email">Incorrect email</div>
+                        </div>
+                        <label class="form-label" for="form3Example3c">Your Email</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4c" class="form-control" formControlName="password"
+                          [ngClass]="{'is-invalid': (myForm.get('password').dirty || myForm.get('password').touched) && !myForm.get('password').valid}" />
+                        <div *ngIf="!myForm.get('password').valid" class="invalid-feedback">
+                          <div *ngIf="myForm.get('password').errors.required">Your password is required</div>
+                          <div *ngIf="myForm.get('password').errors.minlength">Your password must have at least 8 characters
+                          </div>
+                        </div>
+                        <label class="form-label" for="form3Example4c">Password</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4cd" class="form-control" formControlName="password2"
+                          [ngClass]="{'is-invalid': (myForm.get('password2').dirty || myForm.get('password2').touched) && !myForm.get('password2').valid}" />
+                        <div *ngIf="!myForm.get('password2').valid" class="invalid-feedback">
+                          <div *ngIf="myForm.get('password2').errors.required">Your password is required</div>
+                          <div *ngIf="!myForm.get('password2').errors.required && myForm.get('password2').errors.matchPassword">
+                            Password doesn't match</div>
+                        </div>
+                        <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                      </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="button" class="btn btn-primary btn-lg" (click)="register()" [disabled]="myForm.invalid">
+                        Register</button>
+                    </div>
+
+                  </form>
+
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                  <img src="https://img.freepik.com/foto-gratis/composicion-vista-frontal-diferentes-libros_23-2148851049.jpg?w=826&t=st=1678130986~exp=1678131586~hmac=a6a3db195d6dbaf24f0b65f4ad7c9e2a4f3a230e40e5d42b6df33f742f577b5f"
+                    class="img-fluid" alt="Sample image">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
