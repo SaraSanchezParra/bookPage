@@ -22,15 +22,14 @@ export class FormRegisterComponent {
       this.myForm = this.formBuilder.group({
         name: [, Validators.required],
         lastName: [, Validators.required],
-        email: [, Validators.required, Validators.email],
+        email: [, [Validators.required, Validators.email]],
         photo:[, Validators.required],
-        password:[, Validators.required, Validators.minLength(minPassLength)],
-        password2: [, Validators.required, this.checkPasswords]
+        password:[, [Validators.required, Validators.minLength(minPassLength)]],
+        password2: [, [Validators.required, this.checkPasswords]]
       });
 
     }
-    private checkPasswords(control: AbstractControl)
-  {
+    private checkPasswords(control: AbstractControl){
     let resultado = {matchPassword: true};
 
     // console.log(control.parent);
