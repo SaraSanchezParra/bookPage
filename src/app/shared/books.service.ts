@@ -27,10 +27,14 @@ export class BooksService {
 
   }
   public edit(bookEdited:Book):boolean{ //me llega un book formulario
-   console.log(bookEdited.id_book)
-   console.log(this.books)
-    let editBook = this.books.findIndex(book => book.id_book === bookEdited.id_book)
+  //  console.log(bookEdited.id_book)
+  //  console.log(this.books)
+    let editBook = this.books.findIndex(book => book.id_book == bookEdited.id_book)
+    if(editBook != -1){
+
+    }
     // this.books[editBook] = bookEdited //ouedes hacerlo de esta manera o
+
     this.books.splice(editBook, 1, bookEdited)
     return editBook != -1;
 }

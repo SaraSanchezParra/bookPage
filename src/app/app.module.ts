@@ -17,6 +17,7 @@ import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { LoginComponent } from './component/login/login.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
 
 
 
@@ -41,7 +42,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastNoAnimationModule.forRoot()
 
   ],
   providers: [],

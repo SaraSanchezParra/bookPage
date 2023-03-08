@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-books',
@@ -11,9 +12,10 @@ export class BooksComponent {
 
   public books: Book [];
 
-  constructor(public BooksService:BooksService){
+  constructor(public BooksService:BooksService, private toastr: ToastrService){
 
   this.books = this.BooksService.getAll()
+
 
   }
 
@@ -37,7 +39,8 @@ export class BooksComponent {
     if (searchedBook != undefined){ //si busco un libro que no existe, me devolverá a undefined. Es decir, si existe, me devuelve el libro, si no existe, no toca nada.
     this.books = [searchedBook];
     console.log(searchedBook)}
-    else{  alert("This book doesn´t exist")}
+    else{
+      this.toastr.warning("This id has not been found")}
     }
 
   }

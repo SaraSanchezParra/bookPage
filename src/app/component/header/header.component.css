@@ -19,6 +19,11 @@ bookPage/node_modules.linkHeader{
   display: flex;
   gap: 10%;
 }
+.active-link{
+  color: rgb(6, 5, 5) !important;
+  text-decoration: underline !important;
+  font-weight: bold;
+}
 
 header a{
   color: rgb(146, 67, 7);
@@ -26,4 +31,3 @@ header a{
   margin-right: 15px;
   font-size: 15pt;
 }
-
