@@ -31,11 +31,11 @@ export class BooksService {
   //  console.log(this.books)
     let editBook = this.books.findIndex(book => book.id_book == bookEdited.id_book)
     if(editBook != -1){
-
+    this.books.splice(editBook, 1, bookEdited)
     }
     // this.books[editBook] = bookEdited //ouedes hacerlo de esta manera o
 
-    this.books.splice(editBook, 1, bookEdited)
+
     return editBook != -1;
 }
 
