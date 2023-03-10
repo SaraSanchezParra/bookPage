@@ -18,6 +18,8 @@ import { LoginComponent } from './component/login/login.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -43,7 +45,8 @@ import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastNoAnimationModule.forRoot()
+    ToastNoAnimationModule.forRoot(),
+    HttpClientModule
 
   ],
   providers: [],
