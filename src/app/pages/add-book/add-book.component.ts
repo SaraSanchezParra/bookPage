@@ -4,6 +4,7 @@ import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 import { BooksComponent } from '../books/books.component';
 
+
 @Component({
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
@@ -18,9 +19,13 @@ export class AddBookComponent {
   }
 
   public send (title:string, type:string, author: string, price: number, photo:string, id_book:number){
-    let newBook = new Book(title, type, author, price, photo, id_book)
-    this.BooksService.add(newBook);
-    this.toastr.success("Se ha añadido un nuevo libro con el título" + " " +newBook.title)
+    let newBook = new Book(title, type, author, price, photo, id_book);
+    console.log(newBook)
+    this.BooksService.add(newBook).subscribe((data)=>{
+      console.log(data)
+      this.toastr.success("Se ha añadido un nuevo libro con el título" + " " + newBook.title)
+    });
+
   }
   // public recogerCard(cardBook:Book){
   //   this.books = this.books.filter(bookFiltered => bookFiltered.id_book != cardBook.id_book)
