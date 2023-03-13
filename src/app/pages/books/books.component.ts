@@ -35,6 +35,8 @@ export class BooksComponent {
   public recogerCard(cardBook: Book) {
     this.BooksService.delete(cardBook.id_book).subscribe((data)=>{
       console.log(data);
+      this.books = data['data']; //this.books es igual a lo que me devuelve el api
+
     }); //tengo que llamar a cardbook porque es donde está el id_book
 
   }

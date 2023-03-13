@@ -49,6 +49,7 @@ export class BooksService {
 // }
 
 //modificado
+
 public delete(id_book:number):Observable<Object>{
   let deletedBook = {headers: null, body:{id_book:id_book}};
   return this.http.delete(this.url, deletedBook);
