@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import { UsuarioService } from 'src/app/shared/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,11 +13,17 @@ export class LoginComponent {
 
   public user: User
 
-  constructor()
+  constructor(private userService: UsuarioService, private router: Router)
   {
-    this.user = new User(3, "", "", "", "https://fotografias.antena3.com/clipping/cmsimages01/2021/05/02/26E03450-C5FB-4D16-BC9B-B282AE784352/57.jpg", "")
+    this.user = new User(0, "", "", "", "", "");
   }
   onSubmit(form:NgForm){
+    this.userService.login(this.user).subscribe(data=> {
+      console.log(data);
+      this.userService.logueado=true;
+      this.userService.user = data;
+      this.router.navigate(['/books']);
+    });
   console.log(form.value)
   console.log(this.user)
   }

@@ -15,9 +15,9 @@ export class BooksComponent {
     public BooksService: BooksService,
     private toastr: ToastrService
   ) {
-    this.BooksService.getAll().subscribe((data) => { //para poder leerlo necesito susrcibirme a la llamada al api
-      console.log(data['data']);
-      this.books = data['data']; //this.books es igual a lo que me devuelve el api
+    this.BooksService.getAll().subscribe((data:any) => { //para poder leerlo necesito susrcibirme a la llamada al api
+      console.log(data);
+      this.books = data; //this.books es igual a lo que me devuelve el api
     });
   }
 
@@ -33,9 +33,12 @@ export class BooksComponent {
     // this.books.push(newBook);
   }
   public recogerCard(cardBook: Book) {
-    this.BooksService.delete(cardBook.id_book).subscribe((data)=>{
+    this.BooksService.delete(cardBook.Id_book).subscribe((data)=>{
+      this.BooksService.getAll().subscribe((data:any) => { //para poder leerlo necesito susrcibirme a la llamada al api
+        console.log(data);
+        this.books = data; //this.books es igual a lo que me devuelve el api
+      });
       console.log(data);
-      this.books = data['data']; //this.books es igual a lo que me devuelve el api
 
     }); //tengo que llamar a cardbook porque es donde está el id_book
 

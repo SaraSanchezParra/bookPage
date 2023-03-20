@@ -20,10 +20,10 @@ export class UpdateBookComponent {
   //quito todo los arrays de books porque ya los tengo en el servicio.
   }
 
-  public send (title:string, type:string, author: string, price: number, photo:string, id_book:number){
-    let newBook = new Book(title, type, author, price, photo, Number(id_book));
+  public send (title:string, type:string, author: string, price: number, photo:string, id_user:number, id_book:number){
+    let newBook = new Book(title, type, author, price, photo, Number(id_book), Number(id_user));
      this.BooksService.edit (newBook).subscribe((data)=>{
-      this.toastr.success("The reference book" + " " + newBook.id_book + "has been modified")
+      this.toastr.success("The reference book" + " " + newBook.Id_book + "has been modified")
     });
   }
 //   public recogerCard(cardBook:Book){
