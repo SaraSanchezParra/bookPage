@@ -9,7 +9,7 @@
     <a routerLink="books" routerLinkActive="active-link">Books</a>
     <a routerLink="add-book" routerLinkActive="active-link">AddBook</a>
     <a routerLink="update-book" routerLinkActive="active-link">UpdateBook</a>
-    <a routerLink="loginPage" routerLinkActive="active-link">Login</a>
+    <a routerLink="loginPage" routerLinkActive="active-link" *ngIf="this.userService.logueado==false">Login</a>
   </div>
 </header>
 

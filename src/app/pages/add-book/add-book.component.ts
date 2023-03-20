@@ -18,8 +18,8 @@ export class AddBookComponent {
 
   }
 
-  public send (title:string, type:string, author: string, price: number, photo:string, id_book:number){
-    let newBook = new Book(title, type, author, price, photo, id_book);
+  public send (title:string, type:string, author: string, price: number, photo:string, id_book:number, id_user:number){
+    let newBook = new Book(title, type, author, price, photo, id_book, id_user);
     console.log(newBook)
     this.BooksService.add(newBook).subscribe((data)=>{
       console.log(data)
