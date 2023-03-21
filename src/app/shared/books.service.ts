@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UsuarioService } from './usuario.service';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class BooksService {
   private books:Book[]
   private url = "http://localhost:3000/books"
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, public userService: UsuarioService) {
 
     // let book1:Book = new Book ( "El señor de los anillos", "Tapa dura", " J.R.R. Tolkien", 29, "https://upload.wikimedia.org/wikipedia/commons/7/7d/El_Se%C3%B1or_de_los_Anillos_lectura.jpg", 33, 24);
     // let book2:Book = new Book ( "Los renglones torcidos de Dios", "Tapa blanda", "Torcuato Luca de Tena", 15, "https://m.media-amazon.com/images/I/513FJOfUW2L._SX324_BO1,204,203,200_.jpg", 34, 28);
@@ -19,8 +20,8 @@ export class BooksService {
     // this.books = []
   }
   public getAll(): Observable<Object>{ //creo todo esto para poder inyectar estos servicios en cualquier lugar
-
-    return this.http.get<Book[]>(this.url); //llamo al api
+    const newUrl = this.url+"?id_user=" + this.userService.user.id_user;
+    return this.http.get<Book[]>(newUrl); //llamo al api
 
 
   }

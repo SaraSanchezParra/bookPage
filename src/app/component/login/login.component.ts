@@ -21,7 +21,7 @@ export class LoginComponent {
     this.userService.login(this.user).subscribe(data=> {
       console.log(data);
       this.userService.logueado=true;
-      this.userService.user = data;
+      this.userService.user = data[0];
       this.router.navigate(['/books']);
     });
   console.log(form.value)

@@ -12,6 +12,7 @@ export class ProfileComponent {
 
   constructor(public usuarioServicio:UsuarioService){
     this.userData = this.usuarioServicio.user;
+    console.log(this.userData)
 
 
   }

@@ -33,7 +33,7 @@ export class BooksComponent {
     // this.books.push(newBook);
   }
   public recogerCard(cardBook: Book) {
-    this.BooksService.delete(cardBook.Id_book).subscribe((data)=>{
+    this.BooksService.delete(cardBook.id_book).subscribe((data)=>{
       this.BooksService.getAll().subscribe((data:any) => { //para poder leerlo necesito susrcibirme a la llamada al api
         console.log(data);
         this.books = data; //this.books es igual a lo que me devuelve el api
