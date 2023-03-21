@@ -3,13 +3,13 @@
 <header>
   <div class="brand">My Books</div>
   <div class="linkHeader">
-    <a routerLink="home" routerLinkActive="active-link" *ngIf="this.userService.logueado==false">Home</a>
-    <a routerLink="register" routerLinkActive="active-link" *ngIf="this.userService.logueado==false">Register</a>
-    <a routerLink="profile" routerLinkActive="active-link" *ngIf="this.userService.logueado==true">Profile</a>
-    <a routerLink="books" routerLinkActive="active-link" *ngIf="this.userService.logueado==true">Books</a>
-    <a routerLink="add-book" routerLinkActive="active-link" *ngIf="this.userService.logueado==true">AddBook</a>
-    <a routerLink="update-book" routerLinkActive="active-link" *ngIf="this.userService.logueado==true">UpdateBook</a>
-    <a routerLink="loginPage" routerLinkActive="active-link" *ngIf="this.userService.logueado==false">Login</a>
+    <a routerLink="home" routerLinkActive="active-link" *ngIf="!this.userService.logueado">Home</a>
+    <a routerLink="register" routerLinkActive="active-link" *ngIf="!this.userService.logueado">Register</a>
+    <a routerLink="profile" routerLinkActive="active-link" *ngIf="this.userService.logueado">Profile</a>
+    <a routerLink="books" routerLinkActive="active-link" *ngIf="this.userService.logueado">Books</a>
+    <a routerLink="add-book" routerLinkActive="active-link" *ngIf="this.userService.logueado">AddBook</a>
+    <a routerLink="update-book" routerLinkActive="active-link" *ngIf="this.userService.logueado">UpdateBook</a>
+    <a routerLink="loginPage" routerLinkActive="active-link" *ngIf="!this.userService.logueado">Login</a>
   </div>
 </header>
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,8 +10,10 @@ import { User } from 'src/app/models/user';
 export class ProfileComponent {
   public userData : User
 
-  constructor(){
-    this.userData = new User(1865, "Ana", "Beligo", "anabeligo@gmail.com", "https://aishlatino.com/wp-content/uploads/2021/11/que-tipo-de-persona-te-gustaria-ser-730x411-SP.jpg", "Casa123")
+  constructor(public usuarioServicio:UsuarioService){
+    this.userData = this.usuarioServicio.user;
+
+
   }
 
 
