@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 import { ToastrService } from 'ngx-toastr';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-books',
@@ -13,7 +14,8 @@ export class BooksComponent {
 
   constructor(
     public BooksService: BooksService,
-    private toastr: ToastrService
+    private toastr: ToastrService, 
+    private userService: UsuarioService
   ) {
     this.BooksService.getAll().subscribe((data:any) => { //para poder leerlo necesito susrcibirme a la llamada al api
       console.log(data);

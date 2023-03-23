@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { UserAnswer } from 'src/app/models/user-answer';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
@@ -10,14 +13,21 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 export class FormRegisterComponent {
     public myForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder, private userService:UsuarioService){
+    constructor(private formBuilder: FormBuilder, private userService:UsuarioService, public toastr: ToastrService, public router: Router){
       this.buildForm();
     }
     public register(){
       const user = this.myForm.value;
       console.log(user);
-      this.userService.register(user).subscribe(data=>{
+      this.userService.register(user).subscribe((data: UserAnswer) =>{
         console.log(data);
+        if (data.mensaje != "-1"){
+          this.toastr.success("Chachi te has registrado");
+          this.router.navigate(["/loginPage"])
+        } 
+        else {
+          this.toastr.error("Prueba de nuevo")
+        }
       });
     }
     private buildForm(){
@@ -25,7 +35,7 @@ export class FormRegisterComponent {
 
       this.myForm = this.formBuilder.group({
         name: [, Validators.required],
-        lastName: [, Validators.required],
+        last_name: [, Validators.required],
         email: [, [Validators.required, Validators.email]],
         photo:[, Validators.required],
         password:[, [Validators.required, Validators.minLength(minPassLength)]],

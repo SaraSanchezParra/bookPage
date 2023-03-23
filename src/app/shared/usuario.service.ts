@@ -3,6 +3,7 @@ import { Book } from '../models/book';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { UserAnswer } from '../models/user-answer';
 
 
 
@@ -21,7 +22,7 @@ export class UsuarioService {
   }
   register(user:User){
     console.log("paso por aquí")
-    return this.http.post<User>(this.url + "register", user);
+    return this.http.post<UserAnswer>(this.url + "register", user);
   }
   login(user:User){
     return this.http.post<User>(this.url + "login", user);

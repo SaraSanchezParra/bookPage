@@ -4,25 +4,24 @@
     <form>
       <div class="section"></div>
       <div class="inner-wrap">
-        <label>Title <input type="text" #input1></label>
-        <label>Type of cover <input type="text" #input2></label>
+        <label>Title <input type="text" #title></label>
+        <label>Type of cover <input type="text" #type></label>
       </div>
 
       <div class="section"></div>
       <div class="inner-wrap">
-        <label>Author <input type="text" #input3></label>
-        <label>Price <input type="text" #input4></label>
+        <label>Author <input type="text" #author></label>
+        <label>Price <input type="text" #price></label>
+        <label>Photo<input type="text" #photo></label>
       </div>
 
 
       <div class="inner-wrap">
-        <label>Photo <input type="text" #input5></label>
-        <label>Id user <input type="text" #input6></label>
-        <label>Id book <input type="text" #input7></label>
+        <label>Referencia <input type="text" #id_book></label>
       </div>
       <div class="button-section">
         <button type="button"
-          on-click="send(input1.value, input2.value, input3.value, input4.value, input5.value, input6.value, input7.value)">Send</button>
+          on-click="send(title.value, type.value, author.value, price.value, photo.value, id_book.value)">Send</button>
       </div>
     </form>
   </div>
