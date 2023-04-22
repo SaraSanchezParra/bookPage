@@ -19,19 +19,24 @@ export class BooksService {
     // this.books = [book1, book2, book3];
     // this.books = []
   }
-  public getAll(): Observable<Object>{ //creo todo esto para poder inyectar estos servicios en cualquier lugar
+  public getAll(id_user:number){ //creo todo esto para poder inyectar estos servicios en cualquier lugar
     const newUrl = this.url+"?id_user=" + this.userService.user.id_user;
-    return this.http.get<Book[]>(newUrl); //llamo al api
+    return this.http.get(newUrl); //llamo al api
 
 
   }
-  public getOne(id_libro:number): Observable<Object>{
+  // public getOne(id_book:number, id_user:number): Observable<Object>{
 
-    return this.http.get<Book[]>(this.url+"/?id=" + id_libro);//lamo al api
-    // let bookFound = this.books.find(book => book.id_book == id_libro)
-    //   return bookFound
-    }
-
+  //   return this.http.get<Book[]>(this.url+"/?id=" + id_book);//lamo al api
+  //   // let bookFound = this.books.find(book => book.id_book == id_libro)
+  //   //   return bookFound
+  //   }
+  public getOne(id_book: number, id_user:number) {
+    console.log(`${this.url}?id_user=${id_user}&id_book=${id_book}`);
+    
+    return this.http.get(`${this.url}?id_user=${id_user}&id_book=${id_book}`);
+  }
+  
 
   public add(book:Book):Observable<Object>{
     let addedBook = {headers: null, body:book};
